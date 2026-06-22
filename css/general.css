@@ -42,14 +42,12 @@ a {
   text-decoration: none;
 }
 
-/* deja espacio debajo del navbar fijo */
+
 main {
   padding-top: 70px;
 }
 
-/* =======================================================
-   NAVBAR (Bootstrap + ajustes propios)
-   ======================================================= */
+
 .navbar {
   background-color: var(--color-primario);
 }
@@ -69,9 +67,7 @@ main {
   color: var(--color-acento) !important;
 }
 
-/* =======================================================
-   BOTONES PROPIOS
-   ======================================================= */
+
 .btn-cta {
   display: inline-block;
   background-color: var(--color-acento);
@@ -89,9 +85,7 @@ main {
   color: var(--color-texto-claro);
 }
 
-/* =======================================================
-   TÍTULOS DE SECCIÓN (genérico, reutilizable)
-   ======================================================= */
+
 section h2 {
   text-align: center;
   font-size: 2rem;
@@ -102,9 +96,6 @@ section {
   padding: 4rem 1.5rem;
 }
 
-/* =======================================================
-   FOOTER
-   ======================================================= */
 .footer {
   background-color: var(--color-primario);
   color: var(--color-texto-claro);
@@ -112,10 +103,6 @@ section {
   padding: 1.5rem;
 }
 
-/* =======================================================
-   MEDIA QUERIES BASE (mobile-first: esto es lo mínimo,
-   cada sección en index.css puede tener las suyas también)
-   ======================================================= */
 
 /* Tablet en adelante */
 @media (min-width: 768px) {
