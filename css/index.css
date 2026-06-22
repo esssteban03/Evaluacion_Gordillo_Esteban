@@ -1,0 +1,375 @@
+/* =======================================================
+   HERO (mobile-first: columna por defecto)
+   ======================================================= */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+  background-color: var(--color-fondo-alt);
+  padding: 3rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+  border-radius: 28px;
+  margin: 1.5rem 1rem 2rem;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.08);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  top: -100px;
+  right: -100px;
+  background: rgba(75, 75, 224, 0.12);
+  border-radius: 50%;
+  filter: blur(40px);
+  pointer-events: none;
+}
+
+.hero__eyebrow {
+  display: inline-block;
+  margin-bottom: 0.8rem;
+  color: var(--color-acento);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.85rem;
+}
+
+.hero__contenido h1 {
+  font-size: clamp(2.2rem, 4vw, 4rem);
+  margin-bottom: 1rem;
+  line-height: 1.02;
+}
+
+.hero__contenido p {
+  margin-bottom: 1.8rem;
+  max-width: 520px;
+  font-size: 1.05rem;
+  color: #2c2c2c;
+}
+
+.hero__beneficios {
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 1.8rem;
+  text-align: left;
+}
+
+.hero__beneficios div {
+  background: rgba(75, 75, 224, 0.08);
+  border-radius: 999px;
+  padding: 0.8rem 1rem;
+  font-weight: 600;
+  color: #212121;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hero__imagen img {
+  border-radius: 24px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.16);
+  max-width: 100%;
+  height: auto;
+}
+
+
+@media (min-width: 768px) {
+  .hero {
+    flex-direction: row;
+    text-align: left;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 75vh;
+    padding: 4rem 3rem;
+    gap: 3rem;
+  }
+
+  .hero__contenido {
+    flex: 0 0 45%;
+    max-width: 520px;
+  }
+
+  .hero__beneficios {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .hero__imagen {
+    flex: 0 0 50%;
+  }
+
+  .hero__imagen img {
+    max-width: 100%;
+    height: 520px;
+    object-fit: cover;
+  }
+}
+.hero-estadisticas {
+  background: rgba(75, 75, 224, 0.07);
+  padding: 2rem 1.5rem;
+  margin: 0 1rem 2rem;
+  border-radius: 24px;
+  text-align: center;
+}
+
+.hero-estadisticas .container {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.hero-estadisticas .estadistica {
+  background: white;
+  border-radius: 18px;
+  padding: 1.3rem;
+  font-weight: 700;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.06);
+}
+
+@media (min-width: 768px) {
+  .hero-estadisticas .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+.carrusel-seccion {
+  padding: 0 0 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.carousel-item {
+  max-height: 420px;
+  overflow: hidden;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .carousel-item img {
+    height: 320px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .carousel-item img {
+    height: 340px;
+  }
+}
+
+
+.beneficios__contenedor {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.beneficio {
+  background-color: var(--color-fondo-alt);
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  flex: 1;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+@media (min-width: 768px) {
+  .beneficios__contenedor {
+    flex-direction: row;
+  }
+}
+
+.cartelera__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .cartelera__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .cartelera__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+
+.tarjeta {
+  position: relative;
+  height: 280px;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 12px 22px rgba(0,0,0,0.12);
+}
+
+.tarjeta:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 30px rgba(0,0,0,0.18);
+}
+
+.tarjeta img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.tarjeta__overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  padding: 1rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+}
+
+.tarjeta__overlay h3 {
+  color: var(--color-texto-claro);
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+}
+
+.tarjeta__overlay p {
+  color: var(--color-texto-claro);
+  font-size: 0.85rem;
+}
+
+/* =======================================================
+   CONÓCENOS - FLEXBOX (sección obligatoria de Flexbox #2,
+   sirve como respaldo si el profesor pide ver flex en 2 lados)
+   mobile-first: column -> desde tablet: row
+   ======================================================= */
+.conocenos {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.conocenos__imagen img {
+  border-radius: 10px;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    flex-direction: row;
+    text-align: left;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 70vh;
+    padding: 5rem 3rem;
+    gap: 3rem;
+    background-image:
+      radial-gradient(circle at top left, rgba(75, 75, 224, 0.14), transparent 28%),
+      linear-gradient(180deg, var(--color-fondo-alt) 0%, #ffffff 100%);
+  }
+
+  .hero__contenido {
+    flex: 0 0 45%;
+    max-width: 520px;
+  }
+
+  .hero__contenido h1 {
+    font-size: clamp(2.8rem, 4vw, 3.6rem);
+    line-height: 1.05;
+    margin-bottom: 1.2rem;
+  }
+
+  .hero__contenido p {
+    font-size: 1.05rem;
+    max-width: 520px;
+    margin-bottom: 2rem;
+  }
+
+  .hero__imagen {
+    flex: 0 0 50%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero__imagen img {
+    width: 100%;
+    max-width: 560px;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.16);
+    object-fit: cover;
+  }
+}
+
+/* =======================================================
+   CTA
+   ======================================================= */
+.cta {
+  background-color: var(--color-primario);
+  color: var(--color-texto-claro);
+  text-align: center;
+}
+
+.cta h2 {
+  color: var(--color-texto-claro);
+}
+
+.cta p {
+  margin-bottom: 1.5rem;
+}
+
+/* =======================================================
+   FORMULARIO
+   ======================================================= */
+.formulario {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+#contacto .formulario {
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background-color: var(--color-fondo-alt);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.formulario .btn-cta {
+  align-self: center;
+  border: none;
+  cursor: pointer;
+}
